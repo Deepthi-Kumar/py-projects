@@ -1,26 +1,14 @@
-travel_log = [
-{
-  "country": "France",
-  "visits": 12,
-  "cities": ["Paris", "Lille", "Dijon"]
-},
-{
-  "country": "Germany",
-  "visits": 5,
-  "cities": ["Berlin", "Hamburg", "Stuttgart"]
-},
-]
-#DO NOT change the code above 👆
+row1 = ["⬜️","️⬜️","️⬜️"]
+row2 = ["⬜️","⬜️","️⬜️"]
+row3 = ["⬜️️","⬜️️","⬜️️"]
+map = [row1, row2, row3]
+print(f"{row1}\n{row2}\n{row3}")
 
-#TODO: Write the function that will allow new countries
-#to be added to the travel_log.
-def add_new_country(name, visit_count, cities_visited):
-  new_country = {}
-  new_country["country"] = name
-  new_country["visits"] = visit_count
-  new_country["cities"] = cities_visited
-  travel_log.append(new_country)
+position = input("Where do you want to put the treasure? ")
 
-#Do not change the code below 👇
-add_new_country("Russia", 2, ["Moscow", "Saint Petersburg"])
-print(travel_log)
+horizontal = int(position[0])
+vertical = int(position[1])
+
+map[vertical - 1][horizontal - 1] = "X"
+
+print(f"{row1}\n{row2}\n{row3}")
