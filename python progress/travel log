@@ -1,14 +1,23 @@
-row1 = ["⬜️","️⬜️","️⬜️"]
-row2 = ["⬜️","⬜️","️⬜️"]
-row3 = ["⬜️️","⬜️️","⬜️️"]
-map = [row1, row2, row3]
-print(f"{row1}\n{row2}\n{row3}")
+travel_log = [
+{
+  "country": "France",
+  "visits": 12,
+  "cities": ["Paris", "Lille", "Dijon"]
+},
+{
+  "country": "Germany",
+  "visits": 5,
+  "cities": ["Berlin", "Hamburg", "Stuttgart"]
+},
+]
 
-position = input("Where do you want to put the treasure? ")
+#to be added to the travel_log.
+def add_new_country(name, visit_count, cities_visited):
+  new_country = {}
+  new_country["country"] = name
+  new_country["visits"] = visit_count
+  new_country["cities"] = cities_visited
+  travel_log.append(new_country)
 
-horizontal = int(position[0])
-vertical = int(position[1])
-
-map[vertical - 1][horizontal - 1] = "X"
-
-print(f"{row1}\n{row2}\n{row3}")
+add_new_country("Russia", 2, ["Moscow", "Saint Petersburg"])
+print(travel_log)
